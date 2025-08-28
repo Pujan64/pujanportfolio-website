@@ -1,14 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navigation from "@/components/portfolio/Navigation";
+import Hero from "@/components/portfolio/Hero";
+import About from "@/components/portfolio/About";
+import Skills from "@/components/portfolio/Skills";
+import Experience from "@/components/portfolio/Experience";
+import Projects from "@/components/portfolio/Projects";
+import Certifications from "@/components/portfolio/Certifications";
+import Contact from "@/components/portfolio/Contact";
 
-const Index = () => {
+export default function Index() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen scroll-smooth">
+      <Navigation />
+      <main>
+        <div id="home">
+          <Hero />
+        </div>
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Certifications />
+        <Contact />
+      </main>
+      
+      {/* Footer */}
+      <footer className="bg-primary text-primary-foreground py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm">
+            © 2024 Pujan Patel. Built with React, TypeScript, and Tailwind CSS.
+          </p>
+          <p className="text-sm mt-2 opacity-80">
+            Designed and developed with ❤️ for creating meaningful connections.
+          </p>
+        </div>
+      </footer>
     </div>
   );
-};
-
-export default Index;
+}
