@@ -1,29 +1,552 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pujan Patel - Software Developer Portfolio</title>
-    <meta name="description" content="Pujan Patel's professional portfolio showcasing software development projects, skills in Python, JavaScript, and web technologies. Computer Engineering student with internship experience." />
-    <meta name="author" content="Pujan Patel" />
-    <meta name="keywords" content="Pujan Patel, Software Developer, Computer Engineering, Python, JavaScript, Portfolio, Web Development, Data Analytics" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pujan Patel - Software Developer & Computer Engineering Student</title>
+    <meta name="description" content="Passionate software developer and computer engineering student with expertise in Python, JavaScript, and modern web technologies.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen scroll-smooth font-inter">
+    <!-- Navigation -->
+    <nav id="navigation" class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-16">
+                <div class="font-bold text-xl text-primary">
+                    Pujan Patel
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <button class="nav-btn active" data-target="home">Home</button>
+                    <button class="nav-btn" data-target="about">About</button>
+                    <button class="nav-btn" data-target="skills">Skills</button>
+                    <button class="nav-btn" data-target="experience">Experience</button>
+                    <button class="nav-btn" data-target="projects">Projects</button>
+                    <button class="nav-btn" data-target="certifications">Certifications</button>
+                    <button class="nav-btn" data-target="contact">Contact</button>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i data-lucide="sun" class="w-5 h-5 dark-hidden"></i>
+                        <i data-lucide="moon" class="w-5 h-5 light-hidden"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile Navigation Toggle -->
+                <div class="md:hidden flex items-center space-x-2">
+                    <button id="theme-toggle-mobile" class="theme-toggle">
+                        <i data-lucide="sun" class="w-5 h-5 dark-hidden"></i>
+                        <i data-lucide="moon" class="w-5 h-5 light-hidden"></i>
+                    </button>
+                    <button id="mobile-menu-toggle" class="mobile-toggle">
+                        <i data-lucide="menu" class="w-5 h-5" id="menu-icon"></i>
+                        <i data-lucide="x" class="w-5 h-5 hidden" id="close-icon"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden py-4 border-t border-border hidden">
+                <div class="flex flex-col space-y-2">
+                    <button class="nav-btn mobile active" data-target="home">Home</button>
+                    <button class="nav-btn mobile" data-target="about">About</button>
+                    <button class="nav-btn mobile" data-target="skills">Skills</button>
+                    <button class="nav-btn mobile" data-target="experience">Experience</button>
+                    <button class="nav-btn mobile" data-target="projects">Projects</button>
+                    <button class="nav-btn mobile" data-target="certifications">Certifications</button>
+                    <button class="nav-btn mobile" data-target="contact">Contact</button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <meta property="og:title" content="Pujan Patel - Software Developer Portfolio" />
-    <meta property="og:description" content="Professional portfolio showcasing software development projects, skills in Python, JavaScript, and web technologies." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://puja-codes-me.lovable.app" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-screen flex items-center justify-center px-4 py-20 hero-gradient">
+            <div class="container mx-auto text-center text-white">
+                <div class="mb-8 animate-fade-in">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">
+                        Pujan Patel
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-medium mb-6 text-white/90">
+                        Software Developer & Computer Engineering Student
+                    </h2>
+                    <p class="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed text-white/80">
+                        Passionate about creating innovative solutions with Python, JavaScript, and modern web technologies. 
+                        Currently pursuing Computer Engineering with hands-on experience in software development.
+                    </p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="btn btn-secondary group">
+                        <i data-lucide="download" class="w-5 h-5 mr-2 transition-transform group-hover:scale-110"></i>
+                        Download Resume
+                    </button>
+                    <button class="btn btn-outline group" onclick="scrollToSection('contact')">
+                        <i data-lucide="mail" class="w-5 h-5 mr-2 transition-transform group-hover:scale-110"></i>
+                        Get In Touch
+                    </button>
+                </div>
+                
+                <div class="flex justify-center space-x-6">
+                    <a href="mailto:patelpujan2564@gmail.com" class="social-link">
+                        <i data-lucide="mail" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/patelpujan64" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i data-lucide="linkedin" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://github.com/Pujan64" target="_blank" rel="noopener noreferrer" class="social-link">
+                        <i data-lucide="github" class="w-6 h-6"></i>
+                    </a>
+                    <a href="tel:+917984360610" class="social-link">
+                        <i data-lucide="phone" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+                    <div class="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+                </div>
+            </div>
+        </section>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Pujan Patel - Software Developer Portfolio" />
-    <meta name="twitter:description" content="Professional portfolio showcasing software development projects and technical skills." />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+        <!-- About Section -->
+        <section id="about" class="py-20 px-4 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
+            <div class="container mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
+                        <i data-lucide="user" class="w-8 h-8 text-primary"></i>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        About Me
+                    </h2>
+                    <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        Dedicated to building impactful solutions through code and continuous learning
+                    </p>
+                </div>
 
-    <link rel="canonical" href="https://puja-codes-me.lovable.app" />
-  </head>
+                <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
+                    <div class="space-y-6">
+                        <div class="card enhanced-card">
+                            <div class="card-body">
+                                <h3 class="text-2xl font-bold mb-4 text-primary">My Journey</h3>
+                                <p class="text-muted-foreground leading-relaxed mb-4">
+                                    I'm a passionate Computer Engineering student at Parul University, Vadodara, with an impressive 
+                                    <span class="font-semibold text-primary">9.42 CGPA</span>. My journey in technology started with 
+                                    curiosity and has evolved into a deep passion for software development and innovation.
+                                </p>
+                                <p class="text-muted-foreground leading-relaxed">
+                                    Through internships at <span class="font-semibold text-accent">Ncode Infoway</span> and 
+                                    <span class="font-semibold text-accent">Codesoft</span>, I've gained practical experience in 
+                                    web development, database management, and software engineering best practices.
+                                </p>
+                            </div>
+                        </div>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+                        <div class="card enhanced-card">
+                            <div class="card-body">
+                                <h3 class="text-2xl font-bold mb-4 text-primary">What Drives Me</h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="flex items-center space-x-3">
+                                        <i data-lucide="code" class="w-5 h-5 text-accent"></i>
+                                        <span class="text-sm font-medium">Clean Code</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i data-lucide="lightbulb" class="w-5 h-5 text-accent"></i>
+                                        <span class="text-sm font-medium">Innovation</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i data-lucide="users" class="w-5 h-5 text-accent"></i>
+                                        <span class="text-sm font-medium">Collaboration</span>
+                                    </div>
+                                    <div class="flex items-center space-x-3">
+                                        <i data-lucide="trending-up" class="w-5 h-5 text-accent"></i>
+                                        <span class="text-sm font-medium">Growth</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="card enhanced-card">
+                            <div class="card-body">
+                                <h3 class="text-2xl font-bold mb-6 text-primary">Education</h3>
+                                <div class="space-y-4">
+                                    <div class="p-4 rounded-lg bg-gradient-to-r from-primary/10 to-accent/10 border-l-4 border-primary">
+                                        <h4 class="font-semibold text-lg">Computer Engineering</h4>
+                                        <p class="text-muted-foreground">Parul University, Vadodara</p>
+                                        <div class="flex justify-between items-center mt-2">
+                                            <span class="text-sm text-muted-foreground">2022 - 2026</span>
+                                            <span class="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold">
+                                                CGPA: 9.42
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="p-4 rounded-lg bg-gradient-to-r from-accent/10 to-primary/10 border-l-4 border-accent">
+                                        <h4 class="font-semibold text-lg">Higher Secondary (12th)</h4>
+                                        <p class="text-muted-foreground">RBK School, Anand</p>
+                                        <div class="flex justify-between items-center mt-2">
+                                            <span class="text-sm text-muted-foreground">2020 - 2022</span>
+                                            <span class="px-3 py-1 bg-accent/20 text-accent rounded-full text-sm font-semibold">
+                                                95.2%
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card enhanced-card">
+                            <div class="card-body text-center">
+                                <div class="inline-flex items-center justify-center p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mb-4">
+                                    <i data-lucide="target" class="w-6 h-6 text-primary"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-3 text-primary">Current Focus</h3>
+                                <p class="text-muted-foreground">
+                                    Exploring advanced web technologies, cloud platforms, and AI/ML applications 
+                                    to build next-generation solutions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 px-4 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5"></div>
+            <div class="absolute top-20 right-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+            <div class="absolute bottom-20 left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
+            
+            <div class="container mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
+                        <i data-lucide="target" class="w-8 h-8 text-primary"></i>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        Skills & Expertise
+                    </h2>
+                    <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        A comprehensive showcase of my technical prowess and professional capabilities
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Technical Skills -->
+                    <div class="card skill-card">
+                        <div class="card-header">
+                            <div class="skill-icon">
+                                <i data-lucide="code" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <span class="text-lg font-semibold">Programming Languages</span>
+                        </div>
+                        <div class="card-body space-y-6">
+                            <div class="skill-item" data-skill="90">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python</span>
+                                    <span class="skill-percent">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="80">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-percent">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="85">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML & CSS</span>
+                                    <span class="skill-percent">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item" data-skill="75">
+                                <div class="skill-info">
+                                    <span class="skill-name">MongoDB</span>
+                                    <span class="skill-percent">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tools -->
+                    <div class="card skill-card">
+                        <div class="card-header">
+                            <div class="skill-icon">
+                                <i data-lucide="wrench" class="w-6 h-6 text-accent"></i>
+                            </div>
+                            <span class="text-lg font-semibold">Tools & Platforms</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="flex flex-wrap gap-3">
+                                <span class="skill-badge">Visual Studio Code</span>
+                                <span class="skill-badge">Git & GitHub</span>
+                                <span class="skill-badge">Excel</span>
+                                <span class="skill-badge">PowerPoint</span>
+                                <span class="skill-badge">MongoDB Compass</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="card skill-card">
+                        <div class="card-header">
+                            <div class="skill-icon">
+                                <i data-lucide="users" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <span class="text-lg font-semibold">Soft Skills</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="grid grid-cols-1 gap-4">
+                                <div class="soft-skill-item">
+                                    <span>Excellent Communication</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span>Teamwork & Collaboration</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span>Problem-Solving</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span>Creativity & Innovation</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span>Analytical Thinking</span>
+                                </div>
+                                <div class="soft-skill-item">
+                                    <span>Time Management</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-20 px-4 bg-muted/30 relative overflow-hidden">
+            <div class="container mx-auto relative z-10">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
+                        <i data-lucide="briefcase" class="w-8 h-8 text-primary"></i>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        Experience
+                    </h2>
+                    <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        Professional journey and key accomplishments in software development
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="experience-timeline">
+                        <!-- Experience Item 1 -->
+                        <div class="experience-item">
+                            <div class="experience-date">2024</div>
+                            <div class="experience-content">
+                                <div class="experience-icon">
+                                    <i data-lucide="code" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-primary mb-2">Web Developer Intern</h3>
+                                <p class="text-accent font-semibold mb-3">Ncode Infoway • Remote</p>
+                                <p class="text-muted-foreground mb-4">
+                                    Developed responsive web applications using modern technologies and collaborated with 
+                                    cross-functional teams to deliver high-quality solutions.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">HTML/CSS</span>
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Node.js</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Experience Item 2 -->
+                        <div class="experience-item">
+                            <div class="experience-date">2024</div>
+                            <div class="experience-content">
+                                <div class="experience-icon">
+                                    <i data-lucide="database" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="text-xl font-bold text-primary mb-2">Software Development Intern</h3>
+                                <p class="text-accent font-semibold mb-3">Codesoft • Remote</p>
+                                <p class="text-muted-foreground mb-4">
+                                    Worked on database optimization, API development, and implemented automated testing 
+                                    procedures that improved system reliability by 30%.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="tech-tag">Python</span>
+                                    <span class="tech-tag">MongoDB</span>
+                                    <span class="tech-tag">API Development</span>
+                                    <span class="tech-tag">Testing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-4">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
+                        <i data-lucide="folder" class="w-8 h-8 text-primary"></i>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        Featured Projects
+                    </h2>
+                    <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        Showcase of innovative solutions and technical implementations
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                    <!-- Project cards will be generated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-20 px-4 bg-muted/30">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
+                        <i data-lucide="award" class="w-8 h-8 text-primary"></i>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        Certifications
+                    </h2>
+                    <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        Professional certifications and continuous learning achievements
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <!-- Certification cards will be generated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center justify-center p-2 bg-primary/10 rounded-full mb-4">
+                        <i data-lucide="mail" class="w-8 h-8 text-primary"></i>
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                        Get In Touch
+                    </h2>
+                    <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                        Ready to collaborate on your next project? Let's create something amazing together
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid lg:grid-cols-2 gap-12">
+                        <div class="space-y-8">
+                            <div class="card enhanced-card">
+                                <div class="card-body">
+                                    <h3 class="text-2xl font-bold mb-6 text-primary">Let's Connect</h3>
+                                    <div class="space-y-4">
+                                        <a href="mailto:patelpujan2564@gmail.com" class="contact-item">
+                                            <i data-lucide="mail" class="w-5 h-5 text-accent"></i>
+                                            <span>patelpujan2564@gmail.com</span>
+                                        </a>
+                                        <a href="tel:+917984360610" class="contact-item">
+                                            <i data-lucide="phone" class="w-5 h-5 text-accent"></i>
+                                            <span>+91 7984360610</span>
+                                        </a>
+                                        <a href="https://linkedin.com/in/patelpujan64" target="_blank" class="contact-item">
+                                            <i data-lucide="linkedin" class="w-5 h-5 text-accent"></i>
+                                            <span>linkedin.com/in/patelpujan64</span>
+                                        </a>
+                                        <div class="contact-item">
+                                            <i data-lucide="map-pin" class="w-5 h-5 text-accent"></i>
+                                            <span>Vadodara, Gujarat, India</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card enhanced-card">
+                            <div class="card-body">
+                                <form id="contact-form" class="space-y-6">
+                                    <div class="grid md:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="form-label">Name</label>
+                                            <input type="text" name="name" required class="form-input">
+                                        </div>
+                                        <div>
+                                            <label class="form-label">Email</label>
+                                            <input type="email" name="email" required class="form-input">
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="form-label">Subject</label>
+                                        <input type="text" name="subject" required class="form-input">
+                                    </div>
+                                    <div>
+                                        <label class="form-label">Message</label>
+                                        <textarea name="message" rows="5" required class="form-input"></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-full group">
+                                        <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                                        Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-primary-foreground py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm">
+                © 2024 Pujan Patel. Built with HTML, CSS, TailwindCSS, and JavaScript.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
 </html>
